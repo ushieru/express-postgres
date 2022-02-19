@@ -2,7 +2,7 @@ require('dotenv').config();
 import express, { Response, Request, NextFunction } from "express";
 import knex from "knex";
 import { User } from "./models/User";
-console.log(process.env.DATABASE_URL)
+
 const PORT = process.env.PORT || 3030
 const server = express()
 const database = knex({
