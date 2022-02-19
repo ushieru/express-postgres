@@ -7,7 +7,12 @@ const PORT = process.env.PORT || 3030
 const server = express()
 const database = knex({
     client: 'pg',
-    connection: process.env.DATABASE_URL + '?sslmode=require',
+    connection: {
+        connectString: process.env.DATABASE_URL + '?sslmode=require',
+        ssl: {
+            rejectUnauthorized: false
+        }
+    },
 });
 
 server.use(express.json())
