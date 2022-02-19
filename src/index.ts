@@ -8,7 +8,7 @@ const server = express()
 const database = knex({
     client: 'pg',
     connection: {
-        connectString: process.env.DATABASE_URL + '?sslmode=require',
+        connectionString: process.env.DATABASE_URL + '?sslmode=require',
         ssl: {
             rejectUnauthorized: false
         }
